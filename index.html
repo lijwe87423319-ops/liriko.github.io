@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>個人履歷</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <div>
+            <h1>李宜君</h1>
+            <span style="font-size: 12px; color: #555;">LI, YI-JHUN</span>
+        </div>
+        <nav>
+            <a href="#info">個人資訊</a>
+            <a href="#skills">專業技能</a>
+            <a href="#experience">個人經歷</a>
+            <a href="#contact">聯絡方式</a>
+        </nav>
+    </header>
+
+    <section id="info">
+        <div class="section-title">個人資訊</div>
+        <div class="info-card">
+            <div class="avatar-box">
+                <img src="image/photo.jpg" alt="個人照片">
+            </div>
+            <div>
+                <p><strong>SLOGAN：</strong> Do something today that your future self will thank you for.</p>
+                <p><strong>就讀校系：</strong> 中原大學資訊管理學系</p>
+                <p><strong>自我介紹：</strong> 我目前就讀大學二年級，喜歡拍照、嘗試新鮮事物，個性細心隨和，未來請多指教!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-title">專業與程式技能</div>
+        <div class="skills-grid">
+            <article>
+                <h3>核心專業與語言</h3>
+                <div class="skill-item">
+                    HTML / CSS / JS (85%)
+                    <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    Java 物件導向程式設計 (75%)
+                    <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    Python 資料處理 (80%)
+                    <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                </div>
+            </article>
+            <article>
+                <h3>協作與實務工具</h3>
+                <div class="skill-item">
+                    Git / GitHub 版本控制 (70%)
+                    <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    UI/UX 介面設計與原型 (75%)
+                    <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-title">個人經歷</div>
+        
+        <article class="experience-card">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h3>大一上學期：系籃新生盃冠軍</h3>
+                    <p>在大一參加了資管系女籃，透過每個禮拜二練習以及跟其他系友誼賽，最後獲得了新生盃的冠軍，謝謝學姐們幫我們找場地及對手，讓我們能安心練習，也因為是自己努力拿到的獎項，所以格外開心。</p>
+                </div>
+                <div class="experience-img-box">
+                    <img src="image/champing.jpg" alt="經歷照片1">
+                </div>
+            </div>
+        </article>
+
+        <article class="experience-card">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h3>大一下學期：管理學期中專案獲得第三名</h3>
+                    <p>我們專案主題是到小松樹流浪之家幫忙愛心媽媽照顧流浪貓們，透過實際到訪看到有十幾隻貓咪，全由一位愛心媽媽以及兩位志工幫忙，明白他們的辛勞及善心，所以我們希望藉由社群媒體的力量讓更多人看見。</p>
+                </div>
+                <div class="experience-img-box">
+                    <img src="image/mangeclass.jpg" alt="經歷照片2">
+                </div>
+            </div>
+        </article>
+
+        <article class="experience-card">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h3>大一下學期：參加SDGS英文演講比賽</h3>
+                    <p>在大一下的英文課程上，我們這組被老師半推半就地參加了這個比賽，但我們在報名後，幾乎每個禮拜都會抽空來練習，互相檢討哪邊能更好、如何控制在六分鐘內講完報告內容，即使最後沒有得名，但我嘗試參加我沒想過會報名的比賽，我已經覺得大家都很棒了！(圖片因為是用底片相機拍的，所以比較不清楚。)</p>
+                </div>
+                <div class="experience-img-box">
+                    <img src="image/sdg1.jpg" alt="經歷照片3">
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <footer id="contact">
+        <div>
+            <a href="https://www.instagram.com/liii17_q?obrf=MWx0NzBxaTM5dzV3eQ%3D%3D&utm_source=qr" target="_blank">
+                📸 Instagram (請點)
+            </a>
+        </div>
+        <div>
+            <a href="mailto:your.email@example.com">
+                ✉️ 寄送 Email 聯絡(請點)
+            </a>
+        </div>
+    </footer>
+</div>
+<!-- [特效] 點擊導覽列的「專業技能」時，觸發進度條從 0% 慢慢長到指定 % 數 -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const progressBars = document.querySelectorAll('.skill-progress');
+        const skillNavLink = document.querySelector('nav a[href="#skills"]');
+        progressBars.forEach(bar => {
+            bar.dataset.targetWidth = bar.style.width;
+        });
+        function animateSkills() {
+            progressBars.forEach(bar => {
+                bar.style.transition = 'none';
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.5s ease-out';
+                    bar.style.width = bar.dataset.targetWidth;
+                }, 50);
+            });
+        }
+
+        // 網頁剛打開時先跑一次動畫
+        animateSkills();
+
+        // 當點擊 <nav> 上的「專業技能」連結時，再重新跑一次動畫！
+        if (skillNavLink) {
+            skillNavLink.addEventListener('click', () => {
+                // 延遲 300 毫秒，等網頁捲動到專業技能區塊後再開始跑進度條
+                setTimeout(animateSkills, 300);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
